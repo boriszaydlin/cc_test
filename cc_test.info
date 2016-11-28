@@ -1,0 +1,35 @@
+name = Test Theme
+core = 7.x
+version = 7.0
+engine = phptemplate
+project = test
+datestamp = 1447187950
+screenshot = screenshot.jpg
+
+stylesheets[all][] = css/styles.css
+
+regions[pre_header]     = Before header
+regions[header]         = Header
+regions[content_top]    = Content Top
+regions[content_bot]    = Content Bot
+regions[content]        = Content
+regions[inner_content]  = inner_content
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[help]           = Help
+regions[footer]         = Footer
+regions[footer_first]   = First Bottom
+regions[footer_second]  = Second Bottom
+regions[footer_third]   = Third Bottom
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu
+
+scripts[] = js/custom.js

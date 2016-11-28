@@ -1,0 +1,42 @@
+html {
+  @include box();
+  font-family: $main-font;
+  font-size: 100%;
+  height: 100%;
+  body {
+    height: 100%;
+    &.admin-menu {
+      margin-top: 0 !important;
+      padding-top: 29px;
+    }
+  }
+}
+html * {
+  @include box();
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+a {
+  @include transition(all .4s ease-in-out);
+  &:hover {
+    @include transition(all .4s ease-in-out);
+  }
+}
+input,
+button,
+input *,
+button * {
+  @include btnappearence();
+  outline: none;
+  &:focus,
+  &:hover,
+  &:active {
+    outline: none;
+  }
+}
+input[type="checkbox"] {
+  @include btnappearence(checkbox);
+}
