@@ -1,0 +1,40 @@
+.event {
+  @include rem(padding-bottom, 31px);
+  @include rem(padding-top, 29px);
+  background-color: $color-silk;
+  .event-time {
+    color: $color-gray;
+    float: left;
+    font-weight: 600;
+    * {
+      @include rem(font-size, 17px);
+    }
+    sup {
+      @include rem(font-size, 8px);
+      font-weight: 400;
+    }
+    .event-label {
+      color: $color-light-blue;
+      font-family: $sub-font;
+      font-weight: 400;
+    }
+    .date {
+      font-family: $sub-font;
+    }
+    .time {
+      @include rem(margin-left, 4px);
+    }
+  }
+  .event-decription {
+    @include rem(margin-top, 3px);
+    float: left;
+    clear: left;
+  }
+  .reg-link {
+    @include rem(margin-top, 9px);
+    float: right;
+    a {
+      @include main-btn;
+    }
+  }
+}

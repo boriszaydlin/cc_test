@@ -1,0 +1,26 @@
+.main-menu .menu {
+  float: right;
+  li {
+    @include rem(margin, 10px 0 0 35px);
+    float: left;
+    list-style: none;
+    a {
+      @include rem(font-size, 15px);
+      font-family: $sub-font;
+      color: $color-gray;
+      text-transform: uppercase;
+    }
+    &.last {
+      margin-top: 0;
+    }
+    &.last a {
+      @include transparent-btn;
+    }
+  }
+}
+
+@media (max-width: $small_device_width) {
+  .main-menu li {
+    @include rem(margin, 10px 0 0 25px);
+  }
+}

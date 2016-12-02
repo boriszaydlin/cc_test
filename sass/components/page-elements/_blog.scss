@@ -1,0 +1,21 @@
+.blog {
+  @include rem(padding-bottom, 34px);
+  @include rem(padding-top, 9px);
+  outline: none;
+  * {
+    outline: none;
+  }
+  .blog-content {
+    .row {
+      @include rem(padding, 0 7px);
+    }
+    p {
+      @include rem(line-height, 22px);
+    }
+  }
+  .data-time {
+    @include rem(margin-top, 24px);
+    @include rem(padding-top, 14px);
+    border-top: 1px solid $color-silk;
+  }
+}

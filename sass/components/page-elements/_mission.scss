@@ -1,0 +1,57 @@
+.mission {
+  @include rem(padding-top, 17px);
+  background: $color-silk;
+  text-align: center;
+  .content {
+    @include rem(padding-bottom, 46px);
+    border-bottom: 1px solid $color-hr;
+  }
+  .field-content {
+    height: 100%;
+  }
+  .no-border .content {
+    border-bottom: 0;
+  }
+  h2 {
+    @include rem(margin-bottom, 29px);
+  }
+  .additional-description {
+    @include rem(font-size, 17px);
+    @include rem(margin-top, 26px);
+    font-family: $sub-font;
+  }
+  .view-rows {
+    @include rem(margin-top, 97px);
+    .row {
+      @include rem(padding, 0 20px 29px 20px);
+      background: $white;
+    }
+  }
+  .field-img {
+    @include border-radius(50%);
+    @include rem(border-width, 10px);
+    @include rem(height, 100px);
+    @include rem(margin-top, -50px);
+    @include rem(padding, 20px 17px);
+    @include rem(width, 100px);
+    background: $color-sea;
+    border-color: $white;
+    border-style: solid;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .field-title {
+    @include rem(margin-top, 6px);
+    @include rem(margin-bottom, 14px);
+    a {
+      @include rem(font-size, 16px);
+    }
+  }
+  .field-description {
+    @include rem(line-height, 23px);
+  }
+}

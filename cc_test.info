@@ -6,21 +6,18 @@ project = test
 datestamp = 1447187950
 screenshot = screenshot.jpg
 
-stylesheets[all][] = css/styles.css
+stylesheets[all][] = dist/main.css
 
-regions[pre_header]     = Before header
 regions[header]         = Header
-regions[content_top]    = Content Top
-regions[content_bot]    = Content Bot
 regions[content]        = Content
-regions[inner_content]  = inner_content
-regions[sidebar_first]  = First Sidebar
-regions[sidebar_second] = Second Sidebar
+regions[intro]          = Intro
+regions[event]          = Event
+regions[involve]        = Involve
+regions[mission]        = Mission
+regions[members]        = Members
+regions[blog]           = Blog
 regions[help]           = Help
 regions[footer]         = Footer
-regions[footer_first]   = First Bottom
-regions[footer_second]  = Second Bottom
-regions[footer_third]   = Third Bottom
 
 features[] = logo
 features[] = name
@@ -32,4 +29,4 @@ features[] = favicon
 features[] = main_menu
 features[] = secondary_menu
 
-scripts[] = js/custom.js
+scripts[] = dist/main.js

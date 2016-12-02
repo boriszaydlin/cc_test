@@ -328,40 +328,50 @@ $breaklarge: 1180px
 	-ms-transform: $todo
 	transform: $todo
 
-// === CUSTOM === \\
+// === CUSTOM ===
 
 // Layout
-=container($value: 1170px)
+=container($value: 1110px)
 	max-width: $value
 	margin-left: auto
 	margin-right: auto
 
 =main-container
 	+container()
-	+breakpoint($min_device_width)
+	@media (min-width: $min_device_width)
 		+rem(padding-left, 15px)
 		+rem(padding-right, 15px)
-	+breakpoint($mid_device_width)
-		+container(750px)
+	@media (min-width: $mid_device_width)
+		+container(670px)
 		padding-left: 0
 		padding-right: 0
-	+breakpoint($max_device_width)
-		+container(940px)
-	+breakpoint($main_width)
-		+container(1170px)
+	@media (min-width: $max_device_width)
+		+container(865px)
+	@media (min-width: $main_width)
+		+container(1110px)
+
+=general-btn-style
+	+border-radius(2px)
+	+rem(font-size, 14px)
+	border-style: solid
+	border-width: 1px
+	display: inline-block
+	font-family: $sub-font
+	text-transform: uppercase
 
 =main-btn
-	@include rem(font-size, 25px)
-	@include transition(all .4s ease-in-out)
-	background-color: $hover-color
-	border: none
-	color: $text-gold
-	font-weight: $normal
-	padding: 15px 12px
-	text-align: center
-	&:hover
-		@include transition(all .4s ease-in-out)
-		background-color: $text-gold
-		color: $hover-color
-		cursor: pointer
-		outline: none
+	+general-btn-style
+	+rem(padding, 11px 19px)
+	background-color: $color-light-blue;
+	border-color: $color-dark-blue
+	color: $white
+	@media (max-width: $small_device_width)
+		+rem(padding, 11px 13px)
+
+=transparent-btn
+	+general-btn-style
+	+rem(padding, 11px 25px 10px 25px);
+	border-color: $color-light-blue
+	color: $color-light-blue
+	@media (max-width: $small_device_width)
+		+rem(padding, 10px 15px)

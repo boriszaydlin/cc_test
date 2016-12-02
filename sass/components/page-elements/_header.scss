@@ -1,0 +1,10 @@
+.header {
+  @include rem(padding-top, 20px);
+  @include rem(padding-bottom, 14px);
+  background-color: $white;
+  z-index: 10;
+  .logo {
+    @include rem(margin-top, 3px);
+    float: left;
+  }
+}

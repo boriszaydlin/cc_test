@@ -1,0 +1,45 @@
+.intro {
+  @include rem(padding-bottom, 83px);
+  @include rem(padding-top, 58px);
+  background: url('../images/intro-bg.jpg') no-repeat center;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
+  &:after {
+    background: rgba(50, 50, 50, 0.5);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  .intro-content {
+    position: relative;
+    z-index: 2;
+  }
+  p {
+    color: $white;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    &.first-paragraph,
+    &.third-paragraph {
+      @include rem(font-size, 18px);
+    }
+    &.first-paragraph {
+      @include rem(line-height, 33px);
+      @include rem(margin-bottom, 21px);
+      @include rem(max-width, 635px);
+      @include rem(padding-top, 3px);
+    }
+    &.second-paragraph {
+      @include rem(font-size, 15px);
+      @include rem(line-height, 24px);
+      @include rem(margin-bottom, 24px);
+      @include rem(max-width, 600px);
+    }
+  }
+}

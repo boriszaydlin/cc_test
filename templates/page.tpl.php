@@ -64,84 +64,65 @@
  * @see template_process()
  */
 ?>
-
+ <div class="m-loading"><div class="loading-backdrop"><div class="loading-container"><div class="status-container"> <div class="status"></div> <div class="logo"></div></div><h2>Loading Your Experience </h2></div></div></div>
 <div id="page-wrapper">
-  <header id="header" class="header">
-    <div class="general-layout">
-      <div class="pre-header">
-        <?php if ($page['pre_header']): ?>
-            <?php print render($page['pre_header']); ?>
+  <header id="header" class="clearfix header">
+    <div class="inner-header">
+      <div class="content">
+        <?php if ($logo): ?><div id="logo" class="logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><img alt="Logo" src="<?php print $logo; ?>"/></a></div><?php endif; ?>
+        <?php if ($page['header']): ?>
+            <?php print render($page['header']); ?>
         <?php endif; ?>
-      </div>
-      <div class="inner-wrapper">
-        <div class="header-inner">
-          <?php if ($logo): ?><div id="logo" class="logo"><a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>"/></a></div><?php endif; ?>
-          <?php if ($page['header']): ?>
-              <?php print render($page['header']); ?>
-          <?php endif; ?>
-        </div>
       </div>
     </div>
   </header>
+  <main class="general-layout content-inner" id="content">
+    <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
+    <?php print $messages; ?>
+    <?php print render($page['help']); ?>
+    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
 
-  <div class="content-sidebar-wrap">
-    <div class="general-layout content-inner" id="content">
-      <?php if (!empty($tabs['#primary'])): ?><div class="tabs-wrapper"><?php print render($tabs); ?></div><?php endif; ?>
-      <?php print $messages; ?>
+    <?php if (!drupal_is_front_page()) { ?>
+      <?php print render($page['content']); ?>
+    <?php } ?>
+    <?php if ($page['intro']): ?>
+      <div class="intro">
+          <?php print render($page['intro']); ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($page['event']): ?>
+      <div class="event clearfix">
+          <?php print render($page['event']); ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($page['involve']): ?>
+      <div class="involve">
+          <?php print render($page['involve']); ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($page['mission']): ?>
+      <div class="mission" id="about">
+          <?php print render($page['mission']); ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($page['members']): ?>
+      <div class="members">
+          <?php print render($page['members']); ?>
+      </div>
+    <?php endif; ?>
+    <?php if ($page['blog']): ?>
+      <div class="blog" id="blog">
+          <?php print render($page['blog']); ?>
+      </div>
+    <?php endif; ?>
 
-      <?php if ($page['content_top']): ?><div id="content_top"><?php print render($page['content_top']); ?></div><div class="divider clearfix"></div><?php endif; ?>
-      <?php if ($page['content_bot']): ?><div id="content_bot"><div class="filter-wrap"><?php print render($page['content_bot']); ?></div></div><div class="divider clearfix"></div><?php endif; ?>
-      <section id="post-content" class="post-content clearfix" role="main">
-        <?php print render($page['help']); ?>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-
-        <?php if ($page['sidebar_first']): ?>
-          <aside id="first-sidebar" class="first-sidebar" role="complementary">
-            <?php print render($page['sidebar_first']); ?>
-          </aside>
-        <?php endif; ?>
-
-        <div class="main-content">
-          <?php print render($title_prefix); ?>
-          <?php if ($title): ?><h1 class="page-title"><?php print $title; ?></h1><?php endif; ?>
-          <?php print render($title_suffix); ?>
-          <?php print render($page['content']); ?>
-        </div>
-
-        <?php if ($page['sidebar_second']): ?>
-          <aside id="second-sidebar" class="second-sidebar" role="complementary">
-            <?php print render($page['sidebar_second']); ?>
-          </aside>
-        <?php endif; ?>
-      </section>
-      <?php if ($page['inner_content']): ?>
-        <div class="inner-content">
-          <?php print render($page['inner_content']); ?>
-        </div>
-      <?php endif; ?>
-
-    </div>
-  </div>
+  </main>
 
   <footer id="footer" class="footer">
     <div class="general-layout clearfix footer-inner">
       <?php if ($page['footer']): ?>
          <?php print render($page['footer']) ?>
        <?php endif; ?>
-
-      <?php if ($page['footer_first'] || $page['footer_second'] || $page['footer_third']): ?>
-        <div id="footer-area" class="clearfix">
-          <?php if ($page['footer_first']): ?>
-          <div class="column"><?php print render($page['footer_first']); ?></div>
-          <?php endif; ?>
-          <?php if ($page['footer_second']): ?>
-          <div class="column"><?php print render($page['footer_second']); ?></div>
-          <?php endif; ?>
-          <?php if ($page['footer_third']): ?>
-          <div class="column"><?php print render($page['footer_third']); ?></div>
-          <?php endif; ?>
-        </div>
-      <?php endif; ?>
     </div>
   </footer>
 </div>
